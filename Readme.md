@@ -6,11 +6,10 @@ This repository is meant to collect information, input, output, etc. related to 
 
 | Date                    | Location                                                                        | Organizer |
 |:------------------------|:--------------------------------------------------------------------------------|:----------|
-|                         |                                                                                 |           |
 | 02.11.2021 - 05.11.2021 | [Mesnerhof C, Steinberg am Rofan, Österreich](https://www.mesnerhof-c.at/)      | x-cellent |
 | 26.09.2022 - 30.09.2022 | [Württemberger Haus, Hirschegg, Österreich](https://www.wuerttembergerhaus.de/) | SAP       |
 | 22.05.2023 - 26.05.2023 | [Open Sky House, Leverkusen](https://www.openskyhouse.org/)                     | STACKIT   |
 
 # Future Hackathons
 
-The next Hackathon is planned to take place beginning of November 2023 and will be organized by x-cellence.
+The next Hackathon is planned to take place beginning of November 2023 and will be organized by x-cellent.
