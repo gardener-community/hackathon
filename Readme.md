@@ -4,12 +4,12 @@ This repository is meant to collect information, input, output, etc. related to 
 
 # Past Hackthons
 
-| Date                    | Location                                                                        | Organizer  |
-|:------------------------|:--------------------------------------------------------------------------------|:-----------|
-|                         |                                                                                 |            |
-| 02.11.2021 - 05.11.2021 | [Mesnerhof C, Steinberg am Rofan, Österreich](https://www.mesnerhof-c.at/)      | x-cellence |
-| 26.09.2022 - 30.09.2022 | [Württemberger Haus, Hirschegg, Österreich](https://www.wuerttembergerhaus.de/) | SAP        |
-| 22.05.2023 - 26.05.2023 | [Open Sky House, Leverkusen](https://www.openskyhouse.org/)                     | StackIT    |
+| Date                    | Location                                                                        | Organizer |
+|:------------------------|:--------------------------------------------------------------------------------|:----------|
+|                         |                                                                                 |           |
+| 02.11.2021 - 05.11.2021 | [Mesnerhof C, Steinberg am Rofan, Österreich](https://www.mesnerhof-c.at/)      | x-cellent |
+| 26.09.2022 - 30.09.2022 | [Württemberger Haus, Hirschegg, Österreich](https://www.wuerttembergerhaus.de/) | SAP       |
+| 22.05.2023 - 26.05.2023 | [Open Sky House, Leverkusen](https://www.openskyhouse.org/)                     | STACKIT   |
 
 # Future Hackathons
 
