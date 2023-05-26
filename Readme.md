@@ -1,4 +1,4 @@
-# Gardener Hackathon
+# Gardener Hackathons
 
 This repository is meant to collect information, input, output, etc. related to Gardener Hackathons. If you feel like you can contribute something, you are encouraged to file a PR or simply work directly on the main branch. The general idea is to create directories for past and future Hackathons and collect files with planning, review, documentation, whatnot pieces of information in there.
 
