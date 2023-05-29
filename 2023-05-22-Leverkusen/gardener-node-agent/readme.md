@@ -52,3 +52,11 @@ We propose the following sets of pull requests:
 - [] Disable cloud-config-downloader, cloud-config-executor
 - [] Remove cloud-config-downloader, cloud-config-executor
 
+## Contributors
+
+- Tim Ebert
+- Valenting Knabel
+- Gerrit Schwerthelm
+- Robin Schneider
+- Maximilian Geberl
+- Stefan Majer
