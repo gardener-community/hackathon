@@ -12,6 +12,7 @@ The basic idea how we wanted to remove the cloud-config-downloader is like this:
 ## Architecture
 
 ![Design](design.drawio.svg)
+
 TODO: description
 
 ## Gains
