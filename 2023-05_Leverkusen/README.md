@@ -1,6 +1,20 @@
 # Hack The Garden 05/2023 Wrap Up
 
-## IPv6 On Cloud Provider
+## 🕵️ Introduction Of `gardener-node-agent`
+
+**Problem Statement:** `cloud-config-downloader` is an ever-growing shell script running on all worker nodes of all shoot clusters. It is templated via Golang and has a high complexity and development burden. It runs every `60s` and checks whether new systemd units or files have to be downloaded. There are several scalability drawbacks due to less flexibility with shell scripts compared to a controller-based implementation, for example unnecessary restarts of systemd units (e.g., `kubelet`) just because the shell script changed (which often results in short interrupts/hick-ups for end-users).
+
+**Motivation/Benefits**: 💰 Reduction of costs due to less traffic, 📈 better scalability due to less API calls, ⛔️ prevented interrupts/hick-ups due to undesired `kubelet` restarts,  👨🏼‍💻 improved developer productivity, 🔧 reduced operation complexity
+
+**Achievements:** A new Golang implementation for the `gardener-node-agent` based on `controller-runtime` has been developed next to the current `cloud-config-downloader` shell script. It gets deployed onto the nodes via an initial `gardener-node-init` script executed via user data which only downloads the `gardener-node-agent` binary from the OCI registry. From then on, only the `node-agent` runs as systemd unit and manages everything related to the node, including the `kubelet` and its own binaries (self-upgrade is possible).
+
+**Next Steps:** Open an issue explaining the motivation about the change. Add missing integration tests, documentation, and reasonably split the changes into smaller, manageable, reviewable PRs. Add dependencies between config files and corresponding units such that only units get restarted when there are relevant changes.
+
+**Code**: https://github.com/metal-stack/gardener/tree/gardener-node-agent, https://github.com/metal-stack/gardener/tree/gardener-node-agent-2
+
+<hr />
+
+## 🌐 IPv6 On Cloud Provider
 
 **Problem Statement:** With [GEP-21](https://github.com/gardener/gardener/issues/7051), we have started to tackle IPv6 in the local setup. What needs to be done on cloud providers has not been covered or concretely evaluated so far, however this is obviously where eventually we have to go to.
 
@@ -13,7 +27,9 @@ Generally, we have to discuss whether we really want to go to IPv6-only clusters
 
 **Code:** https://github.com/stackitcloud/gardener/tree/hackathon-ipv6
 
-## Bootstrapping "Masterful Clusters" aka "Autonomous Shoots"
+<hr />
+
+## 🌱 Bootstrapping "Masterful Clusters" aka "Autonomous Shoots"
 
 **Problem Statement:** Gardener requires an initial cluster such that it can be deployed and spin up further seed or shoot clusters. This inital cluster can only be setup via different means than `Shoot` clusters, hence it has different qualities, hence it makes the landscapes more heterogenous, hence it eventually results in additional operational complexity.
 
@@ -25,44 +41,9 @@ Generally, we have to discuss whether we really want to go to IPv6-only clusters
 
 **Code**: https://github.com/MartinWeindel/gardener/tree/initial-cluster-poc
 
+<hr />
 
-## Introduction Of `gardener-node-agent`
-
-**Problem Statement:** `cloud-config-downloader` is an ever-growing shell script running on all worker nodes of all shoot clusters. It is templated via Golang and has a high complexity and development burden. It runs every `60s` and checks whether new systemd units or files have to be downloaded. There are several scalability drawbacks due to less flexibility with shell scripts compared to a controller-based implementation, for example unnecessary restarts of systemd units (e.g., `kubelet`) just because the shell script changed (which often results in short interrupts/hick-ups for end-users).
-
-**Motivation/Benefits**: 💰 Reduction of costs due to less traffic, 📈 better scalability due to less API calls, ⛔️ prevented interrupts/hick-ups due to undesired `kubelet` restarts,  👨🏼‍💻 improved developer productivity, 🔧 reduced operation complexity
-
-**Achievements:** A new Golang implementation for the `gardener-node-agent` based on `controller-runtime` has been developed next to the current `cloud-config-downloader` shell script. It gets deployed onto the nodes via an initial `gardener-node-init` script executed via user data which only downloads the `gardener-node-agent` binary from the OCI registry. From then on, only the `node-agent` runs as systemd unit and manages everything related to the node, including the `kubelet` and its own binaries (self-upgrade is possible).
-
-**Next Steps:** Open an issue explaining the motivation about the change. Add missing integration tests, documentation, and reasonably split the changes into smaller, manageable, reviewable PRs. Add dependencies between config files and corresponding units such that only units get restarted when there are relevant changes.
-
-**Code**: https://github.com/metal-stack/gardener/tree/gardener-node-agent, https://github.com/metal-stack/gardener/tree/gardener-node-agent-2
-
-## Moving `machine-controller-manager` Deployment Responsibility To `gardenlet`
-
-**Problem Statement:** The `machine-controller-manager` is deployed by all provider extensions even though it is always the same manifest/specifciation. The only provider-specific part is the sidecar container which implements the interface to the cloud provider API. This increases development efforts since changes have to replicated again and again for all extensions.
-
-**Motivation/Benefits**: 👨🏼‍💻 Improved developer productivity, 🔧 reduced operation complexity
-
-**Achievements:** `gardenlet` takes over deployment of the generic part of `machine-controller-manager` and provider extensions inject their specific sidecar containers via a wehook. The MCM version is managed centrally in `gardener/gardener`, i.e. provider extensions are now only responsible for their specific sidecar image.
-
-**Next Steps:** Add missing tests, adopt documentation, and open pull request. All provider extensions have to be revendored and adapted after this PR has been merged and released.
-
-**Code**: https://github.com/rfranzke/gardener/tree/hackathon/mcm
-
-## Improved E2E Test Accuracy For Local Control Plane Migration
-
-**Problem Statement:** Essential logic for migrating worker nodes during a shoot control plane migration was not tested/skipped in the local scenario which is the basis for e2e tests in Gardener. This effectively increased development effort and complexity.
-
-**Motivation/Benefits**: 👨🏼‍💻 Improved developer productivity
-
-**Achievements:** `provider-local` now makes use of the essential logic in the extensions library which increases confidence for changes. The related PR has been opened and got merged already.
-
-**Next Steps:** None.
-
-**Code**: https://github.com/gardener/gardener/pull/7981
-
-## Garden Cluster Access For Extensions In Seed Clusters
+## 🔑 Garden Cluster Access For Extensions In Seed Clusters
 
 **Problem Statement:** Extensions run in seed clusters and have no access to the garden cluster. In some scenarios, such access is required to cover certain use-cases. There are extension implementations that work around this limitation by re-using `gardenlet`'s kubeconfig for talking to the garden cluster. This is obviously bad since it prevents auditibility.
 
@@ -74,7 +55,9 @@ Generally, we have to discuss whether we really want to go to IPv6-only clusters
 
 **Code:** https://github.com/rfranzke/gardener/tree/hackathon/extensions-garden-access
 
-## Replacement Of `ShootState`s With Data In Backup Buckets
+<hr />
+
+## 💾 Replacement Of `ShootState`s With Data In Backup Buckets
 
 **Problem Statement:** The `ShootState`s are used to persist secrets and relevant extension data (infrastructure state/machine status, etc.) such that they can be restored into the new seed cluster during a shoot control plane migration. However, this resource results in quite a lot of frequent updates (hence network I/O and costs) on both the seed and garden cluster API servers since every change in the shoot worker nodes must be persisted (to prevent losing nodes during a migration). Besides, the approach has scalability concerns since the data does not really qualify for being stored in ETCD.
 
@@ -86,7 +69,9 @@ Generally, we have to discuss whether we really want to go to IPv6-only clusters
 
 **Code:** https://github.com/rfranzke/gardener/tree/hackathon/shootstate-s3
 
-## Introducing `InternalSecret` Resource In Gardener API
+<hr />
+
+## 🔐 Introducing `InternalSecret` Resource In Gardener API
 
 **Problem Statement:** End-users can read or write `Secret`s in their project namespaces in the garden cluster. This prevents Gardener components from storing certain "Gardener-internal" secrets related to the `Shoot` in the respective project namespace (since end-users would have access to them). Also, the Gardener API server uses `ShootState`s for the `adminkubeconfig` subresource of `Shoot`s (needed for retrieving the client CA key used for signing short-lived client certificates).
 
@@ -98,7 +83,37 @@ Generally, we have to discuss whether we really want to go to IPv6-only clusters
 
 **Code**: https://github.com/rfranzke/gardener/tree/hackathon/internal-secrets
 
-## Moving `apiserver-proxy-pod-mutator` Webhook Into `gardener-resource-manager`
+<hr />
+
+## 🤖 Moving `machine-controller-manager` Deployment Responsibility To `gardenlet`
+
+**Problem Statement:** The `machine-controller-manager` is deployed by all provider extensions even though it is always the same manifest/specifciation. The only provider-specific part is the sidecar container which implements the interface to the cloud provider API. This increases development efforts since changes have to replicated again and again for all extensions.
+
+**Motivation/Benefits**: 👨🏼‍💻 Improved developer productivity, 🔧 reduced operation complexity
+
+**Achievements:** `gardenlet` takes over deployment of the generic part of `machine-controller-manager` and provider extensions inject their specific sidecar containers via a wehook. The MCM version is managed centrally in `gardener/gardener`, i.e. provider extensions are now only responsible for their specific sidecar image.
+
+**Next Steps:** Add missing tests, adopt documentation, and open pull request. All provider extensions have to be revendored and adapted after this PR has been merged and released.
+
+**Code**: https://github.com/rfranzke/gardener/tree/hackathon/mcm
+
+<hr />
+
+## 🎯 Improved E2E Test Accuracy For Local Control Plane Migration
+
+**Problem Statement:** Essential logic for migrating worker nodes during a shoot control plane migration was not tested/skipped in the local scenario which is the basis for e2e tests in Gardener. This effectively increased development effort and complexity.
+
+**Motivation/Benefits**: 👨🏼‍💻 Improved developer productivity
+
+**Achievements:** `provider-local` now makes use of the essential logic in the extensions library which increases confidence for changes. The related PR has been opened and got merged already.
+
+**Next Steps:** None.
+
+**Code**: https://github.com/gardener/gardener/pull/7981
+
+<hr />
+
+## 🏗️ Moving `apiserver-proxy-pod-mutator` Webhook Into `gardener-resource-manager`
 
 **Problem Statement:** The `kube-apiserver` pods of shoot clusters were running a webhook server as sidecar container which was used to inject an environment variable into workload pods for preventing unnecessary network hops. While all this is still quite valid, the webhook server should not be ran as a sidecar container in the `kube-apiserver` pod as this violates best practices and comes which other downsides (e.g., when the webhook server needs to be scaled up or down, the entire `kube-apiserver` pod must be restarted).
 
@@ -110,7 +125,9 @@ Generally, we have to discuss whether we really want to go to IPv6-only clusters
 
 **Code:** https://github.com/gardener/gardener/pull/7980
 
-## ETCD Encryption For Custom Resources
+<hr />
+
+## 🗝️ ETCD Encryption For Custom Resources
 
 **Problem Statement:** Currently, only `Secret`s are encrypted [at rest](https://kubernetes.io/docs/tasks/administer-cluster/encrypt-data/) in the ETCDs of shoots. However, users might want to configure more resources that shall be encrypted in ETCD since they might contain confidential data similar to `Secret`s. Also, when `gardener-operator` deploys the Gardener control plane, additional resources like `ControllerRegistration`s or `ShootState`s must be encrypted as well.
 
