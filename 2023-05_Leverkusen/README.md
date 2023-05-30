@@ -79,7 +79,9 @@ Generally, we have to discuss whether we really want to go to IPv6-only clusters
 
 **Achievements:** The Gardener `core.gardener.cloud` API gets a new `InternalSecret` resource which is very similar to the `core/v1.Secret`. The secrets manager has been made generic such that it can handle both `core/v1.Secret`s and `core.gardener.cloud/v1beta1.InternalSecret`s. `gardenlet` populates the client CA to an `InternalSecret` in the project namespace. This can be used by the API server to issue client certificates for the `adminkubeconfig` subresource and opens up for dropping the `ShootState` API.
 
-**Next Steps:** Open an proposal issue with the description. Adapt missing tests and documentation, but otherwise implementation is ready.
+**Next Steps:** Collect feedback in the proposal issue. Adapt missing tests and documentation, but otherwise implementation is ready.
+
+**Issue**: [gardener/gardener#7999](https://github.com/gardener/gardener/issues/7999)
 
 **Code**: https://github.com/rfranzke/gardener/tree/hackathon/internal-secrets
 
