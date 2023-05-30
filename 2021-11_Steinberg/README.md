@@ -1,4 +1,4 @@
-# Hack The Garden 1/2021 Wrap Up
+# Hack The Garden 11/2021 Wrap Up
 
 We, the gardener and metal-stack team, were thinking of organizing a hackathon together since autumn 2019, but then the pandemic made this impossible.
 After all, we managed to arrange such a hackathon this November in the beautiful Tyrolean Alps in an even more beautiful hut, the [Mesnerhof-C](https://www.mesnerhof-c.at/).
