@@ -19,7 +19,7 @@ TODO: description
 
 With the new Architecture we gain a lot, let's describe the most important gains here.
 
-### Developer productivity
+### Developer Productivity
 
 Because we all develop in go day by day, writing business logic in `bash` is difficult, hard to maintain, almost impossible to test. Getting rid of almost all `bash` scripts which are currently in use for this very important part of the cluster creation process will enhance the speed of adding new features and removing bugs.
 
@@ -29,6 +29,12 @@ Until now, the `cloud-config-downloader` runs in a loop every 60sec to check if 
 By using the controller-runtime we can watch for the `node`, the`OSC` in the `secret`, and the shoot-access-token in the `secret`. If any of these object changed, and only then, the required action will take effect immediately.
 This will speed up operations and will reduce the load on the api-server of the shoot dramatically.
 
+## Scalability
+
+Actually the `cloud-config-downloader` add a random wait time before restarting the `kubelet` in case the `kubelet` was updated or a configuration change was made to it. This is required to reduce the load on the API server and the traffic on the internet uplink. It also reduces the overall downtime of the services in the cluster because every `kubelet` restart takes a node for several seconds into `NotReady` state which eventually interrupts service availability.
+
+TODO: The `gardener-node-agent` could do this in a much intelligent way because it watches the `node` object. The gardenlet could add some annotation which tells the `gardener-node-agent` to wait for the kubelet in a coordinated manner. The coordination could be in chunks of nodes and wait for them to finish and then start with the next chunk. Also a equal time spread is possible.
+
 ### Correctness
 
 The configuration of the `cloud-config-downloader` is actually done by placing a file for every configuration item on the disk on the worker node. This was done because parsing the content of a single file and using this as a value in `bash` reduces to something like `VALUE=$(cat /the/path/to/the/file)`. Simple but lacks validation, type safety and whatnot.
@@ -37,7 +43,7 @@ Because actual and previous configuration are compared, removed files and units 
 
 ### Availability
 
-Previously the `cloud-config-downloader` simply restarted the `systemd-units` on every change to the `OSC`, regardless which of the services changed. The `cloud-config-downloader` first checks which systemd-unit was changed, and will only restart these. This will remove unneeded `kubelet` restarts.
+Previously the `cloud-config-downloader` simply restarted the `systemd-units` on every change to the `OSC`, regardless which of the services changed. The `gardener-node-agent` first checks which systemd-unit was changed, and will only restart these. This will remove unneeded `kubelet` restarts.
 
 ## Pull Requests
 
