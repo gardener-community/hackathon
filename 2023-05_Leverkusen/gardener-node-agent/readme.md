@@ -33,7 +33,9 @@ This will speed up operations and will reduce the load on the api-server of the 
 
 Actually the `cloud-config-downloader` add a random wait time before restarting the `kubelet` in case the `kubelet` was updated or a configuration change was made to it. This is required to reduce the load on the API server and the traffic on the internet uplink. It also reduces the overall downtime of the services in the cluster because every `kubelet` restart takes a node for several seconds into `NotReady` state which eventually interrupts service availability.
 
-~~~ TODO: The `gardener-node-agent` could do this in a much intelligent way because it watches the `node` object. The gardenlet could add some annotation which tells the `gardener-node-agent` to wait for the kubelet in a coordinated manner. The coordination could be in chunks of nodes and wait for them to finish and then start with the next chunk. Also a equal time spread is possible.~~~
+~~~
+TODO: The `gardener-node-agent` could do this in a much intelligent way because it watches the `node` object. The gardenlet could add some annotation which tells the `gardener-node-agent` to wait for the kubelet in a coordinated manner. The coordination could be in chunks of nodes and wait for them to finish and then start with the next chunk. Also a equal time spread is possible.
+~~~
 
 Decision was made to keep the existing jitter mechanism which calculates the kubelet-download-and-restart-delay-seconds on the controller itself.
 
