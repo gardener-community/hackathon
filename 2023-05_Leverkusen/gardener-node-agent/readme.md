@@ -33,7 +33,9 @@ This will speed up operations and will reduce the load on the api-server of the 
 
 Actually the `cloud-config-downloader` add a random wait time before restarting the `kubelet` in case the `kubelet` was updated or a configuration change was made to it. This is required to reduce the load on the API server and the traffic on the internet uplink. It also reduces the overall downtime of the services in the cluster because every `kubelet` restart takes a node for several seconds into `NotReady` state which eventually interrupts service availability.
 
-TODO: The `gardener-node-agent` could do this in a much intelligent way because it watches the `node` object. The gardenlet could add some annotation which tells the `gardener-node-agent` to wait for the kubelet in a coordinated manner. The coordination could be in chunks of nodes and wait for them to finish and then start with the next chunk. Also a equal time spread is possible.
+~~~ TODO: The `gardener-node-agent` could do this in a much intelligent way because it watches the `node` object. The gardenlet could add some annotation which tells the `gardener-node-agent` to wait for the kubelet in a coordinated manner. The coordination could be in chunks of nodes and wait for them to finish and then start with the next chunk. Also a equal time spread is possible.~~~
+
+Decision was made to keep the existing jitter mechanism which calculates the kubelet-download-and-restart-delay-seconds on the controller itself.
 
 ### Correctness
 
@@ -51,12 +53,24 @@ In order to bring this work as fast as possible and as smooth as possible into `
 
 We propose the following sets of pull requests:
 
-- [] [Make Decoder aware of plaintext encoding](https://github.com/gardener/gardener/pull/7993) this was found missing during the implementation of the gardener-node-agent.
-- [] Introduce `gardener-node-agent` and `gardener-node-init` with the required API, push container image with binary inside to registry, do not enable their execution
-- [] Put the compiled `OSC` into the secret which is downloaded by the worker bootstrap process, no consumer yet
-- [] Enable downloading of the `gardener-node-init` behind a feature-gate
-- [] Disable cloud-config-downloader, cloud-config-executor
-- [] Remove cloud-config-downloader, cloud-config-executor
+- [ ] [Make Decoder aware of plaintext encoding](https://github.com/gardener/gardener/pull/7993) this was found missing during the implementation of the gardener-node-agent.
+- [ ] Introduce `gardener-node-agent` and `gardener-node-init` with the required API, push container image with binary inside to registry, do not enable their execution (@majst01, @vknabel first gingko tests)
+- [ ] Put the compiled `OSC` into the secret which is downloaded by the worker bootstrap process, no consumer yet (@Gerrit91)
+- [ ] Enable downloading of the `gardener-node-init` behind a feature-gate, check os extensions if they manipulate cloud-config-downloader
+      If they do some manipulation regarding cloud-config-downloader, try to remove these or enable gardener-node-init instead
+      sample: https://github.com/gardener/gardener-extension-os-gardenlinux/pull/41
+- [ ] Disable cloud-config-downloader, cloud-config-executor
+- [ ] Remove cloud-config-downloader, cloud-config-executor
+
+Next Steps:
+
+- [ ] Create a umbrella issue with this content (@majst01)
+- [ ] Write documentation PR
+- [ ] Figure out how difficult it would be to add an extra build job to publish gardener-node-agent and potentially kubelet as OCI Image, organize a short meeting with @Christian Cwienk, @rfranzke
+- [ ] Future Task: Implement configuration immutability by adding a suffix to the config file and reference of the config file in the systemd-unit, e.g. kubelet, as long as gardener-node-agent is beta restart kubelet on every OSC changes
+- [ ] Review usage of configuration file read/write in every controller and document reasoning
+- [ ] Silent all TODOs
+
 
 ## Contributors
 
