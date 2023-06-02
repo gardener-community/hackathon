@@ -69,6 +69,8 @@ Generally, we have to discuss whether we really want to go to IPv6-only clusters
 
 **Next Steps:** Technically, tests and documentation are still needed. Also, we should regularly upload (every hour or so) a backup of `ShootState`. It probably makes sense to write up the proposal in a GEP and agree on the API changes.
 
+**GEP Document**: [gardener/gardener#8012](https://github.com/gardener/gardener/pull/8012)
+
 **Code:** https://github.com/rfranzke/gardener/tree/hackathon/shootstate-s3
 
 <hr />
@@ -98,6 +100,8 @@ Generally, we have to discuss whether we really want to go to IPv6-only clusters
 **Achievements:** `gardenlet` takes over deployment of the generic part of `machine-controller-manager` and provider extensions inject their specific sidecar containers via a wehook. The MCM version is managed centrally in `gardener/gardener`, i.e. provider extensions are now only responsible for their specific sidecar image.
 
 **Next Steps:** Add missing tests, adopt documentation, and open pull request. All provider extensions have to be revendored and adapted after this PR has been merged and released.
+
+**Issue**: [gardener/gardener#7594](https://github.com/gardener/gardener/issues/7594)
 
 **Code**: https://github.com/rfranzke/gardener/tree/hackathon/mcm
 
