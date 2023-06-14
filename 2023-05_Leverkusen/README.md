@@ -71,6 +71,8 @@ Generally, we have to discuss whether we really want to go to IPv6-only clusters
 
 **GEP Document**: [gardener/gardener#8012](https://github.com/gardener/gardener/pull/8012)
 
+**Issue**: [gardener/gardener#8073](https://github.com/gardener/gardener/issues/8073)
+
 **Code:** https://github.com/rfranzke/gardener/tree/hackathon/shootstate-s3
 
 <hr />
