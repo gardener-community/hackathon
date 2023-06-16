@@ -147,4 +147,6 @@ Generally, we have to discuss whether we really want to go to IPv6-only clusters
 
 **Next Steps:** Continue the implementation as part of the `gardener-operator` story. The complex part is to orchestrate dynamically added or removed resources such that they either become encrypted or decrypted.
 
+**Issue:** [gardener/gardener#4606](https://github.com/gardener/gardener/issues/4606)
+
 **Code**: https://github.com/rfranzke/gardener/tree/hackathon/etcd-encryption
