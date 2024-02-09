@@ -70,6 +70,8 @@
 
 **Next Steps:** Multiple `gardenlet`s (on source and target seed) need to coordinate migration, this is completely different from what we have today. Discuss the mechanism and implications of this. Also, ETCD experts should be involved for checking/refining the design. Questions, learnings, and ideas should be noted down as basis for further investigations and discussions after the Hackathon. It needs to be decided whether the topic is worth being pushed forward.
 
+**Repo**: For more details see our small [gardener-control-plane-live-migration](https://github.com/ScheererJ/gardener-control-plane-live-migration) notes repo.
+
 <hr />
 
 ## 🗄️ Stop Vendoring Third-Party Code In `vendor` Folder
