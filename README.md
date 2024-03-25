@@ -10,6 +10,7 @@ This repository is meant to collect information, input, output, etc. related to 
 | 26.09.2022 - 30.09.2022 | [Württemberger Haus, Hirschegg, Österreich](https://www.wuerttembergerhaus.de/) | SAP       | [Summary](2022-09_Hirschegg/README.md)    |
 | 22.05.2023 - 26.05.2023 | [Open Sky House, Leverkusen](https://www.openskyhouse.org/)                     | STACKIT   | [Summary](2023-05_Leverkusen/README.md)   |
 | 06.11.2023 - 10.11.2023 | [Schlosshof Freizeitheim, Schelklingen](https://www.schlosshof-info.de/)        | x-cellent | [Summary](2023-11_Schelklingen/README.md) |
+| 13.05.2024 - 17.05.2024 | [Schlosshof Freizeitheim, Schelklingen](https://www.schlosshof-info.de/)        | x-cellent | [Summary](2024-05_Schelklingen/README.md) |
 
 ## Future Hackathons
 
