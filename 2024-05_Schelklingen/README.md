@@ -24,7 +24,7 @@
 
 **Achievements:** A new Skaffold configuration has been created which deploys `gardener-operator` and its `Garden` CRD, and later the `gardenlet` which register the garden cluster as a seed cluster. This also includes the basic Gardener configuration (`CloudProfile`s, `Project`s, etc.) and the registration of the `provider-local` extension. With this setup, it is now possible to create `Shoot`s as well.
 
-**Next Steps:** The `ManagedSeed` scenario is not tested yet. Also, optimizing the readiness probes to speed up the reconciliation times should be considered.
+**Next Steps:** Optimizing the readiness probes to speed up the reconciliation times should be considered.
 
 **Code/Pull Requests**: https://github.com/gardener/gardener/pull/9763
 
