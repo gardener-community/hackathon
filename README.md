@@ -14,4 +14,4 @@ This repository is meant to collect information, input, output, etc. related to 
 
 ## Future Hackathons
 
-The next Hackathon is proposed to be held early 2024 but not decided yet.
+The next Hackathon is proposed to be held end of 2024 but not decided yet.
