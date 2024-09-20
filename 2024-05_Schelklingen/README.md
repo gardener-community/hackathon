@@ -217,3 +217,7 @@
 **Next Steps:** Review and merge the pull request.
 
 **Code/Pull Requests**: https://github.com/gardener/gardener/pull/9778
+
+<hr />
+
+![ApeiroRA](https://apeirora.eu/assets/img/BMWK-EU.png)
