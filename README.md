@@ -7,7 +7,7 @@ This repository is meant to collect information, input, output, etc. related to 
 If you feel like you can contribute something, you are encouraged to file a PR or simply work directly on the `main` branch.
 The general idea is to create directories for past and future Hackathons and collect files with planning, review, documentation, whatnot pieces of information in there.
 
-## Past Hackthons
+## Hackthons
 
 | Date                    | Location                                                                        | Organizer | Wrap Up                                   |
 |:------------------------|:--------------------------------------------------------------------------------|:----------|:------------------------------------------|
@@ -18,6 +18,4 @@ The general idea is to create directories for past and future Hackathons and col
 | 13.05.2024 - 17.05.2024 | [Schlosshof Freizeitheim, Schelklingen](https://www.schlosshof-info.de/)        | x-cellent | [Summary](2024-05_Schelklingen/README.md) |
 | 02.12.2024 - 06.12.2024 | [Schlosshof Freizeitheim, Schelklingen](https://www.schlosshof-info.de/)        | x-cellent | [Summary](2024-12_Schelklingen/README.md) |
 
-## Future Hackathons
-
-The next Hackathon is proposed to be held in Spring 2025, but concrete dates are not decided yet.
+The subsequent Hackathon is proposed to be held in Spring 2025, but concrete dates are not decided yet.
