@@ -160,7 +160,7 @@
 
 <hr />
 
-## 🤹‍♂️ Deploy Prow Via Flux
+## ⬆️ Deploy Prow Via Flux
 
 **Problem Statement:** Prow is a system for Gardener's CI and automation. So far, it was deployed using manually crafted deployment scripts. Switching to Flux, which is a cloud-native solution for continuous delivery based on GitOps, allows to eliminate these scripts and implement industry best-practises.
 
