@@ -6,7 +6,7 @@
 
 **Motivation/Benefits**: ✨ Support more use cases/scenarios.
 
-**Achievements:** To support multiple architectures, `provider-openstack` required enhancement for mapping machine images to the respective archiecture (e.g., x86 nodes get a different OS image than ARM nodes). This capability has been implemented and validated successfully on STACKIT's OpenStack installation.
+**Achievements:** To support multiple architectures, `provider-openstack` required enhancement for mapping machine images to the respective architecture (e.g., x86 nodes get a different OS image than ARM nodes). This capability has been implemented and validated successfully on STACKIT's OpenStack installation.
 
 **Next Steps:** Review and merge the PR.
 

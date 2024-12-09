@@ -36,7 +36,7 @@
 
 **Motivation/Benefits**: 🔧 Reduced operational complexity, ✨ support more use cases/scenarios, 📦 provide out-of-the-box solution for Gardener community.
 
-**Achievements:** The `Garden` controller has been agumented to deploy `extensions.gardener.cloud/v1alpha1.{BackupBucket,DNSRecord}` resources as part of its reconciliation flow. A new `operator.gardener.cloud/v1alpha1.Extension` CRD has been introduced to register extensions on `gardener-operator` level (specification is similar to `Controller{Registration,Deployment}`s. Serveral new controllers have been added to reconcile the new CRDs - the concepts are very similar to what already happens for extensions in the seed cluster and the related existing code in `gardenlet`. In case the garden cluster is a seed cluster at the same time, multiple instances of the same extension are needed. This requires that we prevent simulatenous reconciliations of the same extension object by different extension controllers. For this purpose, a `class` field has been added to the extension APIs, and extensions can be configured accordingly to restrict their watches for only objects of a specific `class`.
+**Achievements:** The `Garden` controller has been augumented to deploy `extensions.gardener.cloud/v1alpha1.{BackupBucket,DNSRecord}` resources as part of its reconciliation flow. A new `operator.gardener.cloud/v1alpha1.Extension` CRD has been introduced to register extensions on `gardener-operator` level (specification is similar to `Controller{Registration,Deployment}`s. Several new controllers have been added to reconcile the new CRDs - the concepts are very similar to what already happens for extensions in the seed cluster and the related existing code in `gardenlet`. In case the garden cluster is a seed cluster at the same time, multiple instances of the same extension are needed. This requires that we prevent simultaneous reconciliations of the same extension object by different extension controllers. For this purpose, a `class` field has been added to the extension APIs, and extensions can be configured accordingly to restrict their watches for only objects of a specific `class`.
 
 **Next Steps:** Deployment of extension admission components is still missing. Also, validation of the `operator.gardener.cloud/v1alpha1.Extension` as well as tests and documentation is missing. In the future, all `BackupBucket` and `DNSRecord` extension controllers must be adapted such that they support the scenario of running in the garden cluster.
 
@@ -78,7 +78,7 @@
 
 ## 👮 Expose Shoot API Server In [Tailscale](https://tailscale.com/) VPN
 
-**Problem Statement:** The most common ways to secure a shoot cluster is to [apply ACLs](https://github.com/stackitcloud/gardener-extension-acl), or to use an `ExposureClass` which exposes the API server only within a corporate network. However, managing the ACL configuration can become difficult with a growing number of participants (needed IP addresses), especially in a dynamic environment and work-from-home scenarios. `ExposureClass`es might be not possible because no corporate network might be available. A Tailscale-based VPN, however, is a scalable and managable alternative.
+**Problem Statement:** The most common ways to secure a shoot cluster is to [apply ACLs](https://github.com/stackitcloud/gardener-extension-acl), or to use an `ExposureClass` which exposes the API server only within a corporate network. However, managing the ACL configuration can become difficult with a growing number of participants (needed IP addresses), especially in a dynamic environment and work-from-home scenarios. `ExposureClass`es might be not possible because no corporate network might be available. A Tailscale-based VPN, however, is a scalable and manageable alternative.
 
 **Motivation/Benefits**: 🛡️ Increased cluster security, ✨ support more use cases/scenarios.
 
@@ -170,7 +170,7 @@
 
 **Motivation/Benefits**: 🏗️ Lift restrictions, ✨ support more use cases/scenarios.
 
-**Achievements:** A new `syncMode` field has been added to the extension's provider config API which can be used to control the reconciliation behavour. In addition, the additional `Secret` resources are now synced into the cluster such that Flux can use them to decrypt/access resources.
+**Achievements:** A new `syncMode` field has been added to the extension's provider config API which can be used to control the reconciliation behaviour. In addition, the additional `Secret` resources are now synced into the cluster such that Flux can use them to decrypt/access resources.
 
 **Next Steps:** Unit tests have to be implemented and the PR has to be opened. Generally, in order to release `v1.0.0`, the documentation and the `README.md` should be reworked.
 
@@ -178,7 +178,7 @@
 
 <hr />
 
-## 🧹 Move `machine-contoller-manager-provider-local` Repository Into `gardener/gardener`
+## 🧹 Move `machine-controller-manager-provider-local` Repository Into `gardener/gardener`
 
 **Problem Statement:** The [`machine-controller-manager-provider-local`](https://github.com/gardener/machine-controller-manager-provider-local) implementation used by [`gardener-extension-provider-local`](https://github.com/gardener/gardener/blob/master/docs/extensions/provider-local.md) is currently maintained in a different GitHub repository. This makes related maintenance and development tasks more complicated and tedious.
 
@@ -198,7 +198,7 @@
 
 **Motivation/Benefits**: 👨🏼‍💻 Improved developer productivity by removing clutter from PRs and speeding up `git` operations.
 
-**Achievements:** Two out of the four OS extensions maintained in the `gardener` GitHub organization have been adapated.
+**Achievements:** Two out of the four OS extensions maintained in the `gardener` GitHub organization have been adapted.
 
 **Next Steps:** Replicate the work for [`os-ubuntu`](https://github.com/gardener/gardener-extension-os-ubuntu) and [`os-coreos`](https://github.com/gardener/gardener-extension-os-coreos).
 

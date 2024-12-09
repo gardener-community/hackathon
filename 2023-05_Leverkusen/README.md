@@ -31,7 +31,7 @@ Generally, we have to discuss whether we really want to go to IPv6-only clusters
 
 ## 🌱 Bootstrapping "Masterful Clusters" aka "Autonomous Shoots"
 
-**Problem Statement:** Gardener requires an initial cluster such that it can be deployed and spin up further seed or shoot clusters. This inital cluster can only be setup via different means than `Shoot` clusters, hence it has different qualities, hence it makes the landscapes more heterogenous, hence it eventually results in additional operational complexity.
+**Problem Statement:** Gardener requires an initial cluster such that it can be deployed and spin up further seed or shoot clusters. This initial cluster can only be setup via different means than `Shoot` clusters, hence it has different qualities, hence it makes the landscapes more heterogenous, hence it eventually results in additional operational complexity.
 
 **Motivation/Benefits**: 🔗 Drop third-party tooling dependency, 🔧 reduced operation complexity, ✨ support more use-cases/scenarios
 
@@ -49,7 +49,7 @@ Generally, we have to discuss whether we really want to go to IPv6-only clusters
 
 **Motivation/Benefits**: 🛡️ Increased security due to prevention of privilege escalation in the garden cluster by extensions, 👀 better auditing and transparency for garden access, 💡 basis for dropping technical debts (`extensions.gardener.cloud/v1alpha1.Cluster` resource), ✨ support more use-cases/scenarios
 
-**Achievements:** The `tokenrequestor` controller part of `gardener-resource-manager` has been made reusable and is now also registered as part of `gardenlet`. This way, when `gardenlet`'s `ControllerInstallation` controller deploys extensions, it can automatically create dedicated "access token secrets" for the garden cluster. Then its `tokenrequestor` controller can easily provision them and maintain them in the extension namespaces in the seed cluster. All `Deployment`s and similar workload resources get automatically a volume mount for the garden kubeconfig and an environment variable pointing to the location of the kubeconfig. The RBAC privileges for all such extensions are at least similary restricted as for `gardenlet`, i.e. only resources related to the seed cluster they are responsible for can be accessed.
+**Achievements:** The `tokenrequestor` controller part of `gardener-resource-manager` has been made reusable and is now also registered as part of `gardenlet`. This way, when `gardenlet`'s `ControllerInstallation` controller deploys extensions, it can automatically create dedicated "access token secrets" for the garden cluster. Then its `tokenrequestor` controller can easily provision them and maintain them in the extension namespaces in the seed cluster. All `Deployment`s and similar workload resources get automatically a volume mount for the garden kubeconfig and an environment variable pointing to the location of the kubeconfig. The RBAC privileges for all such extensions are at least similarly restricted as for `gardenlet`, i.e. only resources related to the seed cluster they are responsible for can be accessed.
 
 **Next Steps:** Collect feedback in the proposal issue. Technically, the changes are ready and only integration tests and documentation are missing, but let's wait for more feedback on the issue first.
 

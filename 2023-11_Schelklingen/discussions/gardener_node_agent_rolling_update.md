@@ -8,7 +8,7 @@ Downsides of the jitter-approach are:
 
 - It can happen that kubelet restarts happen at the same time
   - Also the jitter periods do not seem to be distributed evenly (as shown by Github comment)
-- Node is becoming `NotReady` on kubelet restart leading to a brief traffic interruption for this sepcific node (e.g. for metal-stack metallb withdraws the route announcements to this node)
+- Node is becoming `NotReady` on kubelet restart leading to a brief traffic interruption for this specific node (e.g. for metal-stack metallb withdraws the route announcements to this node)
 - Restarting kubelets in parallel puts pressure on the API server
 - When an update goes wrong there is no way to stop the update process such that theoretically a node meltdown can appear (e.g. when kubelet restart on a node leads to node freeze for whatever reason, then updates on the other nodes will be carried out anyway)
 

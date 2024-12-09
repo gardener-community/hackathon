@@ -52,7 +52,7 @@
 
 ## Kubelet Server Certificate
 
-- The kubelet was still using a self-signed server certificate (valid for `1y`) and was now adapted to create `CertificateSigningRequest` resourcs (same process compared to what it does to retrieve its client certificate).
+- The kubelet was still using a self-signed server certificate (valid for `1y`) and was now adapted to create `CertificateSigningRequest` resources (same process compared to what it does to retrieve its client certificate).
 - There is a new controller in `gardener-resource-manager` which approves such CSRs so that `kube-controller-manager` can issue the certificate.
 - With this, the server certificate is only valid for `30d` and rotated regularly.
 - Documentation and tests are still missing and need to be adapted.

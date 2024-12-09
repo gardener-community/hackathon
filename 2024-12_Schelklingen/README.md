@@ -6,7 +6,7 @@
 
 **Motivation/Benefits**: ✨ Support more use cases/scenarios.
 
-**Achievements:** Due to incompatibilies of the recent Gardener version with the extension for IronCore, which had to be fixed first, the progress was delayed a bit. Eventually, we were able to create dual-stack shoot clusters. However, there are still quite some open issues, e.g., `Service` of type `LoadBalancer` don't not work for them, node-to-node communication does not work for IPv6 traffic, and a few more.
+**Achievements:** Due to incompatibilities of the recent Gardener version with the extension for IronCore, which had to be fixed first, the progress was delayed a bit. Eventually, we were able to create dual-stack shoot clusters. However, there are still quite some open issues, e.g., `Service` of type `LoadBalancer` don't not work for them, node-to-node communication does not work for IPv6 traffic, and a few more.
 
 **Next Steps:** Now that a shoot cluster can at least be created (reconciles to 100%), the issues can be investigated and hopefully fixed one-by-one.
 
