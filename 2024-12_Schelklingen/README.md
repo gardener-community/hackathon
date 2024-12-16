@@ -282,6 +282,8 @@
 
 **Next Steps:** The effort has to be continued after the Hackathon such that a pull requests can be opened.
 
+**Issue:** https://github.com/gardener/gardener/issues/11043
+
 **Code/Pull Requests:** https://github.com/timebertt/gardener/tree/config-apis
 
 <hr />
