@@ -7,7 +7,7 @@ This repository is meant to collect information, input, output, etc. related to 
 If you feel like you can contribute something, you are encouraged to file a PR or simply work directly on the `main` branch.
 The general idea is to create directories for past and future Hackathons and collect files with planning, review, documentation, whatnot pieces of information in there.
 
-## Hackathon Events
+## Events
 
 | Date                    | Location                                                                        | Organizer | Wrap Up                                   |
 |:------------------------|:--------------------------------------------------------------------------------|:----------|:------------------------------------------|
@@ -18,4 +18,12 @@ The general idea is to create directories for past and future Hackathons and col
 | 13.05.2024 - 17.05.2024 | [Schlosshof Freizeitheim, Schelklingen](https://www.schlosshof-info.de/)        | x-cellent | [Summary](2024-05_Schelklingen/README.md) |
 | 02.12.2024 - 06.12.2024 | [Schlosshof Freizeitheim, Schelklingen](https://www.schlosshof-info.de/)        | x-cellent | [Summary](2024-12_Schelklingen/README.md) |
 
-The subsequent Hackathon is proposed to be held in Spring 2025, but concrete dates are not decided yet.
+The subsequent Hackathon is proposed to be held in spring 2025, but concrete dates are not decided yet.
+
+## What to Expect
+
+The Gardener Community Hackathon is a week-long event held twice a year (spring and late autumn) where we team up with Gardener community members. As you can see [above](#events), it usually takes place in Schelklingen, Germany, and focuses on collaborative work on Gardener-related topics. A few weeks beforehand, we hold a planning meeting where everyone can pitch ideas and vote on the topics they're interested in tackling. Initial teams are formed based on these topics, aiming to mix participants from different companies for diversity. That said, teams can change, and you can switch topics dynamically during the week as desired – there are no hard rules or enforcements.
+
+You can check out past topics in the summary documents stored inside this repository – it's a broad mix, and pretty much anything Gardener-related is welcome! The week starts around 12 PM on Monday and wraps up around 10 AM on Friday. During the Hackathon, we have regular demo sessions to showcase team progress, and topics are briefly presented in a review meeting the following week.
+
+On-site, breakfast is provided daily, lunch comes via catering, and we cook dinner together (participation optional). One evening, we go out for dinner. For fun, there's table soccer, table tennis, pool, and a huge outdoor area. Some folks go running in the mornings before breakfast. Internet access is via Starlink, and we usually organize car pools to get to the location.
