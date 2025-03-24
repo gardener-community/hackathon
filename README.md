@@ -17,8 +17,9 @@ The general idea is to create directories for past and future Hackathons and col
 | 06.11.2023 - 10.11.2023 | [Schlosshof Freizeitheim, Schelklingen](https://www.schlosshof-info.de/)        | x-cellent | [Summary](2023-11_Schelklingen/README.md) |
 | 13.05.2024 - 17.05.2024 | [Schlosshof Freizeitheim, Schelklingen](https://www.schlosshof-info.de/)        | x-cellent | [Summary](2024-05_Schelklingen/README.md) |
 | 02.12.2024 - 06.12.2024 | [Schlosshof Freizeitheim, Schelklingen](https://www.schlosshof-info.de/)        | x-cellent | [Summary](2024-12_Schelklingen/README.md) |
+| 02.06.2025 - 06.06.2025 | [Schlosshof Freizeitheim, Schelklingen](https://www.schlosshof-info.de/)        | x-cellent | [Summary](2025-06_Schelklingen/README.md) |
 
-The subsequent Hackathon is proposed to be held in spring 2025, but concrete dates are not decided yet.
+A subsequent Hackathon is proposed to be held in late autumn 2025, but concrete dates are not decided yet.
 
 ## What to Expect
 
