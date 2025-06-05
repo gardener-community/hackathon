@@ -41,6 +41,10 @@ TODO(tobschli): What are the drawbacks of OpenVPN?
 
 **Code/Pull Requests:**
 
+![OpenTelemetry transport flow](./otel-transport-shoot-metrics/otel-flow.png)
+
+![Prometheus chart using OpenTelemtry metrics](./otel-transport-shoot-metrics/prometheus-chart.png)
+
 <hr />
 
 ## 🔬 Cluster Network Observability
