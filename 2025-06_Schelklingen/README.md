@@ -53,7 +53,11 @@ TODO(tobschli): What are the drawbacks of OpenVPN?
 
 **Next Steps:**
 
-**Code/Pull Requests:**
+**Issue:** https://github.com/microsoft/retina/issues/1654
+
+**Code/Pull Requests:** https://github.com/microsoft/retina/pull/1657
+
+![Cluster Network Observability – Prometheus Traffic Chart](./cluster-network-observability/prometheus-traffic-chart.png)
 
 <hr />
 
@@ -67,7 +71,7 @@ TODO(tobschli): What are the drawbacks of OpenVPN?
 
 **Next Steps:**
 
-**Code/Pull Requests:**
+**Code/Pull Requests:** https://github.com/gardener/gardener/pull/12247
 
 <hr />
 
@@ -81,7 +85,12 @@ TODO(tobschli): What are the drawbacks of OpenVPN?
 
 **Next Steps:**
 
+**Issue:**
+* https://github.com/gardener/gardener/issues/12250 (stretch goal)
+
 **Code/Pull Requests:**
+* https://github.com/gardener/gardener/pull/12251
+* https://github.com/gardener/gardener/compare/master...metal-stack:gardener:controlplane-objects-provider-interface (stretch goal)
 
 <hr />
 
@@ -99,7 +108,11 @@ TODO(tobschli): What are the drawbacks of OpenVPN?
 
 **Next Steps:**
 
+**Issue:** https://github.com/gardener/dashboard/issues/2469
+
 **Code/Pull Requests:**
+* Project Title – https://github.com/gardener/dashboard/pull/2470
+* Value Defaulting – https://github.com/gardener/dashboard/pull/2476
 
 <hr />
 
@@ -113,7 +126,9 @@ TODO(tobschli): What are the drawbacks of OpenVPN?
 
 **Next Steps:**
 
-**Code/Pull Requests:**
+**Issue:** https://github.com/gardener/gardener/issues/8810
+
+**Code/Pull Requests:** https://github.com/gardener/gardener/pull/12260
 
 <hr />
 
@@ -121,7 +136,7 @@ TODO(tobschli): What are the drawbacks of OpenVPN?
 
 **Problem Statement:** Usually, the individual content of our documentation is of high quality and helpful. However, we typically receive complaints about the structure and explorability of our documentation.
 
-**Motivation/Benefits:** With improved documentation, especially in regards to accessibility for new Gardeners🧑‍🌾, we can greatly improve the impact of the project whilst also putting off load for people answering questions.
+**Motivation/Benefits:** With improved documentation, especially in regard to accessibility for new Gardeners🧑‍🌾, we can greatly improve the impact of the project whilst also putting off load for people answering questions.
 
 **Achievements:**
 
@@ -131,7 +146,7 @@ TODO(tobschli): What are the drawbacks of OpenVPN?
 
 <hr />
 
-## ℹ️ Expose EgressCIDRs in shoot-info `ConfigMap`
+## ℹ️ Expose EgressCIDRs in shoot-info `ConfigMap` 🏎️
 
 **Problem Statement:** Some stakeholders need to know the egress CIDRs of a shoot cluster.
 
@@ -141,11 +156,11 @@ TODO(tobschli): What are the drawbacks of OpenVPN?
 
 **Next Steps:**
 
-**Code/Pull Requests:**
+**Code/Pull Requests:** https://github.com/gardener/gardener/pull/12252
 
 <hr />
 
-## Overcome Maximum of 450 `Node`s on Azure
+## 📈 Overcome Maximum of 450 `Node`s on Azure
 
 **Problem Statement:** Extensions that do not rely on overlay networking for their in-cluster networking usually rely on other mechanisms such as route tables to establish p2p traffic. Azure being one of them. We currently face scaling difficulties as clusters generally approach the maximum size of route tables set by the provider and we need a new network architecture to overcome this limitation.
 
@@ -156,6 +171,48 @@ TODO(tobschli): What are the drawbacks of OpenVPN?
 **Next Steps:**
 
 **Code/Pull Requests:**
+
+<hr />
+
+## 🦜 Multiple Parallel Versions in a Gardener Landscape (fka. Canary Deployments)
+
+**Problem Statement:** 
+
+**Motivation/Benefits:**
+
+**Achievements:**
+
+**Next Steps:**
+
+**Code/Pull Requests:**
+
+<hr />
+
+## ♻️ GEP-32 – Version Classification Lifecycles 🏎️
+
+**Problem Statement:**
+
+**Motivation/Benefits:**
+
+**Achievements:**
+
+**Next Steps:**
+
+**Code/Pull Requests:** https://github.com/metal-stack/gardener/pull/9
+
+<hr />
+
+## 🧑‍🔧 Worker Group Node Roll-out 🏎️
+
+**Problem Statement:**
+
+**Motivation/Benefits:**
+
+**Achievements:**
+
+**Next Steps:**
+
+**Code/Pull Requests:** https://github.com/rrhubenov/gardener/tree/worker-pool-rollout
 
 <hr />
 
