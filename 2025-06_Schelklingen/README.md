@@ -2,7 +2,6 @@
 
 ## ⚡️Replace OpenVPN with Wireguard
 
-TODO(tobschli): What are the drawbacks of OpenVPN?
 **Problem Statement:** The Gardener VPN implementation between control and data plane currently uses OpenVPN, which is a well-established but somewhat old solution for VPNs. Wireguard is a relatively new, but well-liked contender in the VPN space. It could be possible to replace OpenVPN with Wireguard. As we do not want to spin up a load balancer per control plane (or use one port per control plane) a reverse proxy like [mwgp](https://github.com/apernet/mwgp) is required.
 
 **Motivation/Benefits:** 🚀 Modernize VPN stack, ⚡️ improved performance and simplicity.
