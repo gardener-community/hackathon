@@ -12,6 +12,9 @@ TODO(tobschli): What are the drawbacks of OpenVPN?
 **Next Steps:**
 
 **Code/Pull Requests:**
+* https://github.com/metal-stack/gardener/tree/wireguard
+* https://github.com/metal-stack/vpn2/tree/wireguard
+* https://github.com/majst01/mwgp
 
 <hr />
 
@@ -26,6 +29,14 @@ TODO(tobschli): What are the drawbacks of OpenVPN?
 **Next Steps:**
 
 **Code/Pull Requests:**
+* https://github.com/gardener/gardener-extension-provider-gcp/pull/1052
+* https://github.com/gardener/gardener-extension-provider-openstack/pull/1042
+* https://github.com/fluent/fluent-operator/pull/1616
+* https://github.com/afritzler/cortex/commit/4000c188086fe383d314efeb40a663f49aa8b35b
+* https://github.com/afritzler/cortex/commit/616c0b80d90d036f4275636e1a3be9c5f2aac9e5
+* https://github.com/afritzler/vali/commit/35fbce152f783f33fdc2066e09d60ec2ba56b562
+* https://github.com/afritzler?tab=packages&repo_name=vali
+* https://github.com/gardener/gardener/pull/12248
 
 <hr />
 
@@ -113,6 +124,7 @@ TODO(tobschli): What are the drawbacks of OpenVPN?
 **Code/Pull Requests:**
 * Project Title – https://github.com/gardener/dashboard/pull/2470
 * Value Defaulting – https://github.com/gardener/dashboard/pull/2476
+* Hide UI Elements – https://github.com/gardener/dashboard/pull/2478
 
 <hr />
 
@@ -143,6 +155,8 @@ TODO(tobschli): What are the drawbacks of OpenVPN?
 **Next Steps:**
 
 **Code/Pull Requests:**
+* https://github.com/gardener/documentation/pull/652
+* https://github.com/gardener/documentation/pull/653
 
 <hr />
 
@@ -213,6 +227,20 @@ TODO(tobschli): What are the drawbacks of OpenVPN?
 **Next Steps:**
 
 **Code/Pull Requests:** https://github.com/rrhubenov/gardener/tree/worker-pool-rollout
+
+<hr />
+
+## 👀 Instance Scheduled Events Watcher
+
+**Problem Statement:**
+
+**Motivation/Benefits:**
+
+**Achievements:**
+
+**Next Steps:**
+
+**Code/Pull Requests:**
 
 <hr />
 
