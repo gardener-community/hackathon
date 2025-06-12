@@ -30,9 +30,9 @@ There is a [document](https://github.com/axel7born/vpn2/blob/wireguard/docs/wire
 
 **Motivation/Benefits:** 🧩 Enable lightweight/single-node deployments, 🛠️ reduce resource overhead.
 
-**Achievements:**
+**Achievements:** In addition to several components being made single-node ready, the Prometheus deployments were made configurable via the component configuration.
 
-**Next Steps:**
+**Next Steps:** It needs to be evaluated if the steps taken are sufficient to be used in a real world scenario.
 
 **Code/Pull Requests:**
 * https://github.com/gardener/gardener-extension-provider-gcp/pull/1052
@@ -52,9 +52,9 @@ There is a [document](https://github.com/axel7born/vpn2/blob/wireguard/docs/wire
 
 **Motivation/Benefits:** 📊 Flexible and modern metrics collection, 🔍 improved observability.
 
-**Achievements:**
+**Achievements:** The Shoot metrics are now collected by the OpenTelemetry collector instance running on the shoot. The metrics are then scraped by the Prometheus instance running on the seed. The OpenTelemetry collector instance is configured to filter and fine tune the metrics sets, allowing for more flexibility in the metrics collection.
 
-**Next Steps:**
+**Next Steps:** There needs to be further collaboration in the community to decide on how to proceed with the Observability 2.0 initiative in this context. 
 
 **Code/Pull Requests:**
 
@@ -70,9 +70,9 @@ There is a [document](https://github.com/axel7born/vpn2/blob/wireguard/docs/wire
 
 **Motivation/Benefits:** 👁️‍🗨️ Enhanced network visibility, 📈 actionable insights for optimization.
 
-**Achievements:**
+**Achievements:** The retina tool was successfully enhanced to also label source and destionation zones of the traffic. This allows to get insights into the traffic across availability zones, to potentially reduce costs.
 
-**Next Steps:**
+**Next Steps:** The PR for retina is still open and needs to be merged. After that, it can be discussed how to proceed with the integration into Gardener, e.g. in the shape of an extension.
 
 **Issue:** https://github.com/microsoft/retina/issues/1654
 
@@ -88,9 +88,9 @@ There is a [document](https://github.com/axel7born/vpn2/blob/wireguard/docs/wire
 
 **Motivation/Benefits:** 🔒 Improved security and integrity for managed resources.
 
-**Achievements:**
+**Achievements:** A PoC was created that demonstrates that signing of ManagedResource secrets is possible.
 
-**Next Steps:**
+**Next Steps:** There are still some open questions, as well as testing which needs to be followed up on.
 
 **Code/Pull Requests:** https://github.com/gardener/gardener/pull/12247
 
@@ -102,9 +102,9 @@ There is a [document](https://github.com/axel7born/vpn2/blob/wireguard/docs/wire
 
 **Motivation/Benefits:** 🔄 Simplified operations, ⚙️ improved scalability and automation.
 
-**Achievements:**
+**Achievements:** A PR was created to merge this feature into Gardener.
 
-**Next Steps:**
+**Next Steps:** The PR needs to be reviewed and merged.
 
 **Issue:**
 * https://github.com/gardener/gardener/issues/12250 (stretch goal)
@@ -121,9 +121,12 @@ There is a [document](https://github.com/axel7born/vpn2/blob/wireguard/docs/wire
 
 **Motivation/Benefits:** 🖥️ Improved user experience, 🛠️ more flexible and customizable dashboard.
 
-**Achievements:**
+**Achievements:** 
+- Annotations for project resources can be added that are used by the gardener-dashboard to show a custom display name for Shoots. This allows to overcome the project name length limit.
+- The dashboard can now be configured to use default values for Shoots, e.g. AutoScaler min/max replicas.
+- The dashboard can now be configured to hide certain UI elements, e.g. Control Plane HA.
 
-**Next Steps:**
+**Next Steps:** There are some open discussions on how to incorporate the new features into the dashboard.
 
 **Issue:** https://github.com/gardener/dashboard/issues/2469
 
@@ -140,9 +143,9 @@ There is a [document](https://github.com/axel7born/vpn2/blob/wireguard/docs/wire
 
 **Motivation/Benefits:** ⚖️ Better resource distribution, 🚦 improved reliability for internal traffic.
 
-**Achievements:**
+**Achievements:** Cluster internal L7 load balancing was implemented by leveraging generic token kubeconfig, creating a dedicated clusterIP service for Istio ingress gateway pods, and introducing a pod-kube-apiserver-load-balancing webhook to inject necessary configurations into control plane pods. 
 
-**Next Steps:**
+**Next Steps:** Merge the PR.
 
 **Issue:** https://github.com/gardener/gardener/issues/8810
 
@@ -157,8 +160,14 @@ There is a [document](https://github.com/axel7born/vpn2/blob/wireguard/docs/wire
 **Motivation/Benefits:** 📚 Easier onboarding, 🔎 improved discoverability and structure.
 
 **Achievements:**
+- Metadata, e.g. page synonyms and categories for the documentation pages was added / enhanced to allow for better discoverability.
+- Glossary was enhanced to explain more terms and concepts used in the documentation.
+- A PoC for using VitePress as a documentation generator was created. This allows for a more modern and flexible documentation structure, as well as better developer experience when working on the documentation.
 
 **Next Steps:**
+- Take more time to improve metadata as well as the search algorithm.
+- Potentially add analytics to the documentation to understand how it is used and where improvements can be made.
+- Look into the PoC for VitePress and decide if it should be used as a replacement for the current documentation.
 
 **Code/Pull Requests:**
 * https://github.com/gardener/documentation/pull/652
@@ -172,9 +181,9 @@ There is a [document](https://github.com/axel7born/vpn2/blob/wireguard/docs/wire
 
 **Motivation/Benefits:** 🏷️ Enable better integration for shoot workloads, 📤 improved transparency.
 
-**Achievements:**
+**Achievements:** It was implemented and merged during the hackathon.
 
-**Next Steps:**
+**Next Steps:** None
 
 **Code/Pull Requests:** https://github.com/gardener/gardener/pull/12252
 
@@ -186,9 +195,9 @@ There is a [document](https://github.com/axel7born/vpn2/blob/wireguard/docs/wire
 
 **Motivation/Benefits:** 🚀 Enable larger clusters, 🏗️ reference for other providers.
 
-**Achievements:**
+**Achievements:** Analysis and hurdles of the problem were identified, and a potential solution was discussed. The solution involves using a combination of route tables and virtual networks to overcome the limitations.
 
-**Next Steps:**
+**Next Steps:** A preview feature of Azure is needed to be able to follow up on this. Until it is enabled, it takes some time.
 
 **Code/Pull Requests:**
 
@@ -196,13 +205,13 @@ There is a [document](https://github.com/axel7born/vpn2/blob/wireguard/docs/wire
 
 ## 🦜 Multiple Parallel Versions in a Gardener Landscape (fka. Canary Deployments)
 
-**Problem Statement:**
+**Problem Statement:** Gardener currently has very tight versioning constraints. For example, it is not possible to have multiple versions of the same extension type running on the same seed cluster. Therefore, previous ideas around canary deployments ended with the direction to make control plane migration as easy/fast/reliable as possible so that the control planes can be moved between seeds running with different versions of gardenlet/extensions. A different approach, favoured by this proposal, would be to make it possible to run multiple version in parallel on a single seed cluster with filters in place so that individual control plane components are still reconciled only by one set of version. This would allow multiple "channel" in the same landscape, e.g. alpha, beta, GA.
 
 **Motivation/Benefits:** 🦜 Enable canary/parallel versioning, 🔄 safer rollouts.
 
-**Achievements:**
+**Achievements:** It was discovered that the current implementation allows to roll out different versions across different seeds.
 
-**Next Steps:**
+**Next Steps:** There are still some caveats which require further discussion, which will be followed up on.
 
 **Code/Pull Requests:**
 
@@ -210,13 +219,13 @@ There is a [document](https://github.com/axel7born/vpn2/blob/wireguard/docs/wire
 
 ## ♻️ GEP-32 – Version Classification Lifecycles 🏎️
 
-**Problem Statement:**
+**Problem Statement:** Last Gardener Hackathon we implemented Version Classification Lifecycles in the (Namespaced) Cloud Profile, proposed the GEP-32, but we couldn't find enough time to finish the required pull requests for the actual implementation. Our Draft PR.
 
 **Motivation/Benefits:** ♻️ Automated version lifecycle management, ⏳ reduced manual effort.
 
-**Achievements:**
+**Achievements:** The previous PR was rebased and confirmed to still be working. The implementation was cut into several smaller PRs to make it easier to review and merge.
 
-**Next Steps:**
+**Next Steps:** The individual PRs need to be worked on, reviewed and merged. 
 
 **Code/Pull Requests:** https://github.com/metal-stack/gardener/pull/9
 
@@ -224,13 +233,14 @@ There is a [document](https://github.com/axel7born/vpn2/blob/wireguard/docs/wire
 
 ## 🧑‍🔧 Worker Group Node Roll-out 🏎️
 
-**Problem Statement:**
+**Problem Statement:** Kubernetes Deployments allow simple rollout of pods with kubectl rollout restart deployment <name>. There are situations when something similar would be nice to have for worker groups in the Gardener context. For example, the dual-stack migration requires to roll nodes. It would be easier to have a simple way, e.g. by using an annotation on the shoot resource, to trigger node roll-out for a worker group.
 
 **Motivation/Benefits:** 🧑‍🔧 Improved node management, 🚀 streamlined rollouts.
 
-**Achievements:**
+**Achievements:** A PoC was created that allows to trigger a node roll-out for a worker group by using an annotation on the shoot resource. Now the Shoot resource can be annotated with `gardener.cloud/operation=rollout-workers=<pool1>,<pool2>,...,<poolN>.`
+This causes a new status to appear on the Shoot that shows the given worker pools as pending for rollout.
 
-**Next Steps:**
+**Next Steps:** The PoC needs to be polished and tested, as well as reviewed and merged.
 
 **Code/Pull Requests:** https://github.com/rrhubenov/gardener/tree/worker-pool-rollout
 
@@ -238,15 +248,15 @@ There is a [document](https://github.com/axel7born/vpn2/blob/wireguard/docs/wire
 
 ## 👀 Instance Scheduled Events Watcher
 
-**Problem Statement:**
+**Problem Statement:** Cloud providers may need to move, stop, retire, reboot etc. The means of communication differ but they are generally available either in the instance objects themselves or more commonly the metadata service. The general goal of this task is to create an agent that can browse and expose via node events and/or dashboard, shoot condition warnings or similar channels available to stakeholders the VM events. This will allow users to take action for their critical workloads inside their maintenance windows and not the arbitrary cloudprovider date.
 
-**Motivation/Benefits:**
+**Motivation/Benefits:** : 🕒 Proactive workload management, 🔔 timely notifications for critical events
 
-**Achievements:**
+**Achievements:** For Azure, a PR was raised to enable this functionality. It allows to watch for scheduled events on Azure VMs and expose them as node conditions. This way, users can be notified of upcoming maintenance windows and take action accordingly.
 
-**Next Steps:**
+**Next Steps:** The PR needs to be reviewed and merged. After that, it can be discussed how to proceed with the integration of other providers.
 
-**Code/Pull Requests:**
+**Code/Pull Requests:** https://github.com/kubernetes-sigs/cloud-provider-azure/pull/9170
 
 <hr />
 
