@@ -52,9 +52,9 @@ There is a [document](https://github.com/axel7born/vpn2/blob/wireguard/docs/wire
 
 **Motivation/Benefits:** 📊 Flexible and modern metrics collection, 🔍 improved observability.
 
-**Achievements:** The Shoot metrics are now collected by the OpenTelemetry collector instance running on the shoot. The metrics are then scraped by the Prometheus instance running on the seed. The OpenTelemetry collector instance is configured to filter and fine tune the metrics sets, allowing for more flexibility in the metrics collection.
+**Achievements:** Collecting shoot metrics by an OpenTelemetry collector instance running on the shoot and transporting those to the Prometheus OTLP ingestion endpoint on seeds has been proved to be a viable scenario. The OpenTelemetry collector instance can be configured to filter and fine tune the metrics sets, allowing for more flexibility in the metrics collection.
 
-**Next Steps:** There needs to be further collaboration in the community to decide on how to proceed with the Observability 2.0 initiative in this context. 
+**Next Steps:** Introducing OpenTelemetry Collector on shoot nodes is now part of the implementation plan for Observability 2.0. The community is invited to participate in this or any future initiative part of Gardener Observability 2.0 concept.
 
 **Code/Pull Requests:**
 
