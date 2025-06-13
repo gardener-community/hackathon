@@ -7,12 +7,19 @@
 **Motivation/Benefits:** 🚀 Modernize VPN stack, ⚡️ improved performance and simplicity.
 
 **Achievements:**
+We have a POC for VPN via Wireguard connection for one shoot with local setup and the local setup for extensions.
+There is a [document](https://github.com/axel7born/vpn2/blob/wireguard/docs/wireguard.md) describing the approach and the deployment. 
 
 **Next Steps:**
+* Test network connection: resiliance, downtime during new deployment, throuput...
+* Aggregate the secrets from all shoots to generate a unified MWGP configuration.
+* Currently MWPG needs to be restarted to get the new configuration. Whis would have to be done for each new shoot. Check if this is a problem and if it can be avoided.
+* Check if the functionality of MWGP can be implemented as Istio plugin.
+* Refactor and finalize the implementation to prepare PRs.
 
 **Code/Pull Requests:**
-* https://github.com/metal-stack/gardener/tree/wireguard
-* https://github.com/metal-stack/vpn2/tree/wireguard
+* https://github.com/axel7born/gardener/tree/wireguard
+* https://github.com/axel7born/vpn2/tree/wireguard
 * https://github.com/majst01/mwgp
 
 <hr />
