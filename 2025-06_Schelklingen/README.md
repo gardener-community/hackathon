@@ -1,6 +1,6 @@
 # Hack The Garden 06/2025 Wrap Up
 
-![Group picture of the 7th Hack the Garden event in Schelklingen](./group-picture.jpg)
+![Group picture of the 7th Hack the Garden event in Schelklingen](./group-picture.png)
 
 <hr />
 
