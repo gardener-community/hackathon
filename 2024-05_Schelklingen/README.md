@@ -1,5 +1,9 @@
 # Hack The Garden 05/2024 Wrap Up
 
+![Group picture of the 5th Hack the Garden event in Schelklingen](./group-picture.jpg)
+
+<hr />
+
 ## 🗃️ OCI Helm Release Reference For `ControllerDeployment`s
 
 **Problem Statement:** Today, `ControllerDeployment`s contain the base64-encoded, gzip'ed, tar'ed raw Helm chart inside [their specification](https://github.com/gardener/gardener/blob/master/example/25-controllerdeployment.yaml#L11). Such an API blows up the backing ETCD unnecessarily, and it is error-prone/cumbersome to maintain.

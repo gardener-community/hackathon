@@ -1,5 +1,9 @@
 # Hack The Garden 11/2023 Wrap Up
 
+![Group picture of the 4th Hack the Garden event in Schelklingen](./group-picture.jpg)
+
+<hr />
+
 ## 🏛️ ARM Support For OpenStack Extension
 
 **Problem Statement:** Today, the [OpenStack extension](https://github.com/gardener/gardener-extension-provider-openstack) does not support shoot clusters with nodes based on the ARM architecture. However, some OpenStack installations support virtual machines with ARM, so Gardener should be able to provision them (similar to how it's already possible on AWS, for example).

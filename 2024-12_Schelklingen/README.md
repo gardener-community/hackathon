@@ -1,5 +1,9 @@
 # Hack The Garden 12/2024 Wrap Up
 
+![Group picture of the 6th Hack the Garden event in Schelklingen](./group-picture.jpg)
+
+<hr />
+
 ## 🌐 IPv6 Support On [IronCore](https://github.com/ironcore-dev)
 
 **Problem Statement:** IPv6-only shoot clusters are not yet supported on IronCore, yet it is clear that we eventually have to support it, given the limited scalability and phase-out of IPv4.

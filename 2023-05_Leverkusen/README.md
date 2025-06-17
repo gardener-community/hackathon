@@ -1,5 +1,9 @@
 # Hack The Garden 05/2023 Wrap Up
 
+![Group picture of the 3rd Hack the Garden event in Leverkusen](./group-picture.jpg)
+
+<hr />
+
 ## 🕵️ Introduction Of `gardener-node-agent`
 
 **Problem Statement:** `cloud-config-downloader` is an ever-growing shell script running on all worker nodes of all shoot clusters. It is templated via Golang and has a high complexity and development burden. It runs every `60s` and checks whether new systemd units or files have to be downloaded. There are several scalability drawbacks due to less flexibility with shell scripts compared to a controller-based implementation, for example unnecessary restarts of systemd units (e.g., `kubelet`) just because the shell script changed (which often results in short interrupts/hick-ups for end-users).

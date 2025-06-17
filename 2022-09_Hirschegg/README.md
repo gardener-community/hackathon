@@ -1,5 +1,9 @@
 # Hack The Garden 09/2022 Wrap Up
 
+![Group picture of the 2nd Hack the Garden event in Hirschegg](./group-picture.jpg)
+
+<hr />
+
 ## IPv6
 
 - There is an open PR which adapts some assumptions about the IPv4 CIDRs in `gardener/gardener` (changes are rather minimal).
