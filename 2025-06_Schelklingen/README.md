@@ -169,7 +169,7 @@ Some points that could be improved: Value Defaulting (landscape scope): e.g. Aut
 🖥️ Improved user experience, 🛠️ more flexible and customizable dashboard.
 
 **Achievements:** 
-* Annotations for project resources can be added that are used by the gardener-dashboard to show a custom display name for Shoots. This allows to overcome the project name length limit.
+* Annotations for project resources can be added that are used by the gardener-dashboard to show a custom display name for projects. This allows to overcome the project name length limit.
 * The dashboard can now be configured to use default values for Shoots, e.g. AutoScaler min/max replicas.
 * The dashboard can now be configured to hide certain UI elements, e.g. Control Plane HA.
 
