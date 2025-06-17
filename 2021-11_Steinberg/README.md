@@ -6,6 +6,8 @@ After all, we managed to arrange such a hackathon this November in the beautiful
 This location is equipped with all you need for a serious hacking event, like kicker, dart, excellent WLAN, projector and lots of space to hang around and hack together.
 It is also a perfect place to go outside hiking between intense sessions to get your brain and body refreshed.
 
+![Group picture of the 1st Hack the Garden event in Steinberg](./group-picture.jpg)
+
 ## Preparation
 
 First we collected a list of projects suitable for implementation during this hackathon and then voted for the winners.
