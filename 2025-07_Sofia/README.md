@@ -36,10 +36,10 @@ Reiterate over the API of the existing pvc-autoscaler. Resolve the conceptual is
 * offer pvc-autoscaler to Shoot owners
 
 **Achievements:**
-Resolve the conceptual problem with the CRD approach. The PersistentVolumeAutoscaler resource was reworked to track all PVCs of a StatefulSet.
+The PersistentVolumeAutoscaler resource was added to track all PVCs mounted inside the pods belonging to a controller. For instance, users can now directly target a StatefulSet or even a Prometheus resource and all of their PVCs will be tracked and potentially scaled up.
 
 **Next Steps:**
-* Check if we the pvc-autoscaler can scale down volume size using VolumeSnapshots
+* Check if the pvc-autoscaler can scale down volume size using VolumeSnapshots.
 
 **Code/Pull Requests:**
 https://github.com/plkokanov/pvc-autoscaler/tree/hackathon/pvc-autoscaler-with-crd
@@ -80,12 +80,12 @@ Failed to enable unit: Refusing to operate on alias name or linked unit file: ss
 This error prevents the OSC to be successfully applied.
 
 **Motivation/Benefits:**
-Improving compatibility with aliased or symlinked units enhances the robustness of `gardener-node-agent`. By avoiding failures during drop-in-based updates, the it can apply configuration changes more reliably and consistently.
+Improving compatibility with aliased or symlinked units enhances the robustness of `gardener-node-agent`. By avoiding failures during drop-in-based updates, configuration changes can be applied more reliably and consistently.
 
 **Achievements:**
 * Gain deeper understanding of `systemd` mechanics:
   * difference between enabling a unit via `systemctl` and by manually creating symlinks
-  * how configuration files for units are prioritized and loaded from different "well known" by systemd locations
+  * how configuration files for units are prioritized and loaded from different "well known" systemd locations
   * the logic behind unit aliases and the results of their explicit enabling
 * Monitor behavior of drop-in config files without re-enabling the unit itself.
 * Validate in local setup that `systemd` would apply updated drop-ins after `systemctl daemon-reload` and a restart of the unit, without requiring a `systemctl enable` of the unit.
@@ -133,7 +133,7 @@ N/A
 **Problem Statement:**
 We don't have a guide for developers how to write good input validation. Let's document what different types of validation we have across the components; how to write good validation code with examples; checklist and best practices. When we have the guide, we could even work on adapting components and codebase to comply with it.
 
-Input validation is vast area. There are several points for improvements we can make there.
+Input validation is a vast area. There are several points for improvements we can make there.
 There is a need for a guide for developers how to write validation code - examples, checklist and best practices.
 On the other side, there are also many challenging topics in the input validation area. One of these topics is how can extension admission components validate referenced resources in easy and reliable manner.
 
