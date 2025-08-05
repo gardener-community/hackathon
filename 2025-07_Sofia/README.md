@@ -15,12 +15,15 @@ Viewer kubeconfigs currently include the requestor's username, which can uninten
 
 **Achievements:**
 * Avoid unwanted impersonation eventually causing privilege escalation by adding randomly generated prefix to the username in the kubeconfig's client certificate issued by the `shoots/adminkubeconfig` and `shoots/viewerkubeconfig` subresources.
+* Use dedicated groups for the different user roles: system administrator, project administrator, system viewer and project viewer.
 
 **Next Steps:**
-* Finalize groups segregation by role (project vs system administrators and viewers).
+N/A
 
 **Code/Pull Requests:**
 https://github.com/gardener/gardener/pull/12597
+https://github.com/gardener/gardener/pull/12673
+https://github.com/gardener/gardener/pull/12674
 
 <hr />
 
@@ -169,7 +172,7 @@ Improved developer experience, unified testing framework, unified integration (e
 We managed to adapt one simple test - the Shoot hibernation test ([`test/testmachinery/system/shoot_hibernation`](https://github.com/gardener/gardener/blob/v1.123.0/test/testmachinery/system/shoot_hibernation/hibernation_test.go)). We adapted the test to use the `gardener.ShootFramework` instead of `framework.ShootFramework`.
 
 **Next Steps:**
-* Adapt a more complex TM test. 
+* Adapt a more complex TM test.
 * Open umbrella issue for the story.
 * Raise a PR for the hibernation test adaptations.
 
