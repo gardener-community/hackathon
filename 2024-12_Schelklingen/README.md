@@ -116,7 +116,7 @@
 
 **Issue:** https://hackmd.io/GwTNubtZTg-D1mNhzV5VOw
 
-**Code/Pull Requests:** https://github.com/kubernetes/autoscaler/pull/7560, https://github.com/ialidzhikov/gardener/commits/enh/seed-and-shoot-vpa-max-allowed, https://github.com/gardener/gardener/pull/10413
+**Code/Pull Requests:** https://github.com/kubernetes/autoscaler/pull/7560, https://github.com/gardener/gardener/pull/12481
 
 <hr />
 
