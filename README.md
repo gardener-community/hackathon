@@ -19,8 +19,9 @@ The general idea is to create directories for past and future Hackathons and col
 | 02.12.2024 - 06.12.2024 | [Schlosshof Freizeitheim, Schelklingen](https://www.schlosshof-info.de/)        | x-cellent | [Summary](2024-12_Schelklingen/README.md) |
 | 02.06.2025 - 06.06.2025 | [Schlosshof Freizeitheim, Schelklingen](https://www.schlosshof-info.de/)        | x-cellent | [Summary](2025-06_Schelklingen/README.md) |
 | 21.07.2025 - 25.07.2025 | [SAP Center Sofia](https://maps.app.goo.gl/SPdvQ4F2p7Qqfx4p9)                   | SAP       | [Summary](2025-07_Sofia/README.md)        |
+| 24.11.2025 - 28.11.2025 | [Schlosshof Freizeitheim, Schelklingen](https://www.schlosshof-info.de/)        | x-cellent | [Summary](2025-11_Schelklingen/README.md) |
 
-A subsequent Hackathon is proposed to be held in late autumn 2025, but concrete dates are not decided yet.
+A subsequent Hackathon is proposed to be held in spring 2026, but concrete dates are not decided yet.
 
 ## What to Expect
 
